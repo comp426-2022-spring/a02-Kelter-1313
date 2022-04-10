@@ -15,12 +15,12 @@
  */
 
 function coinFlip() {
-  a = Math.floor(Math.random() * 10) + 1;
+  var a = Math.floor(Math.random() * 10) + 1;
   if (a <= 5){
-    return "heads"
+    return "heads";
   }
   else{
-    return "tails"
+    return "tails";
   }
 }
 
@@ -43,12 +43,12 @@ function coinFlip() {
     ]
  */
 
-function coinFlips(flips) {
-  a = []
+function coinFlips(flips=1) {
+  var a = [];
   for (let x = 0; x < flips; x++) {
-    a.push(coinFlip())
+    a.push(coinFlip());
   }
-  return a
+  return a;
 }
 
 /** Count multiple flips
@@ -65,17 +65,17 @@ function coinFlips(flips) {
  */
 
 function countFlips(array) {
-  a = array
-  counts = {"heads": 0, "tails": 0}
+  var a = Array.from(array);
+  var counts = {"heads": 0, "tails": 0}
   for (let x = 0; x < array.length; x++) {
-    if (a.pop() == "head"){
-      counts["heads"]+=1
+    if (a.pop() == "heads"){
+      counts["heads"]+=1;
     }
     else{
-      counts["tails"]+=1
+      counts["tails"]+=1;
     }
   }
-  return counts
+  return counts;
 }
 
 /** Flip a coin!
@@ -90,14 +90,14 @@ function countFlips(array) {
  */
 
 function flipACoin(call) {
-  flipResult = coinFlip()
-  returnDict = {call: call, flip: flipResult, result: ""} 
-  resultOfCall = "lose"
+  var flipResult = coinFlip();
+  var returnDict = {"call": call, "flip": flipResult, "result": ""};
+  var resultOfCall = "lose";
   if (call == flipResult){
-    resultOfCall = "win"
+    resultOfCall = "win";
   }
-  returnDict[result] = resultOfCall
-  return returnDict
+  returnDict["result"] = resultOfCall;
+  return returnDict;
 }
 
 
@@ -105,3 +105,5 @@ function flipACoin(call) {
  * 
  * Export all of your named functions
 */
+
+export {coinFlip, coinFlips, countFlips, flipACoin};
