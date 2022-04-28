@@ -8,6 +8,7 @@ import {coinFlip, coinFlips, countFlips, flipACoin} from './modules/coin.mjs';
 const args = process.argv.slice(3);
 if (((args[0] != "heads") && (args[0] != "tails")) || args[0] === null){
     // return error message
-    console.error("Must type either heads or tails")
+    console.error("Error: no input.\nUsage: node guess-flip --call=[heads|tails]")
+
  //   process.exit(1)
 }else{console.log(flipACoin(args[0]))}
