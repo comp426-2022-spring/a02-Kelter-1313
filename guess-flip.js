@@ -5,7 +5,7 @@ if (process.argv.length < 3){
     process.exit(1)
 }
 const args = process.argv.slice(2);
-if ((args[0] != "heads") && (args[0] != "tails")){
+if (((args[0] != "heads") && (args[0] != "tails")) || args[0] === null){
     // return error message
     console.error("Must type either heads or tails")
     
