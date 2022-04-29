@@ -7,7 +7,7 @@ import {coinFlip, coinFlips, countFlips, flipACoin} from './modules/coin.mjs';
 
 if (process.argv.length < 3){
     console.log("Error: no input\nUsage: node flips --number=9")
-    process.exit(1)
+ //   process.exit(1)
 }else{
 const args = process.argv.slice(2);
 if (args[0][9] == null){
