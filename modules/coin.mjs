@@ -45,6 +45,10 @@ function coinFlip() {
 
 function coinFlips(flips=1) {
   var a = [];
+  if (flips==1){
+    a.push(coinFlip())
+    return a
+  }
   for (let x = 0; x < flips; x++) {
     a.push(coinFlip());
   }
